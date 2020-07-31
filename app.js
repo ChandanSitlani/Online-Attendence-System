@@ -19,7 +19,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/Attend", {useNewUrlParser: true, useUnifiedTopology:true});
+mongoose.connect("mongodb+srv://test:test@cluster0.e5cra.mongodb.net/<dbname>?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology:true});
 mongoose.set("useCreateIndex", true);
   const studentSchema = new mongoose.Schema({
     name: {type:String, required: true},
@@ -281,6 +281,6 @@ app.post("/calcutad",function(req,res){
 })
 
 
-app.listen(3000,function(){
-  console.log("server is running on port 3000");
+app.listen(process.env.PORT||3000,function(){
+  console.log("server is running on port 3000",process.env.PORT);
 });
