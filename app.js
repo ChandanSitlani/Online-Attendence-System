@@ -19,7 +19,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb+srv://test:test@cluster0.e5cra.mongodb.net/<dbname>?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology:true});
+mongoose.connect("mongodb+srv://test:test@cluster0.e5cra.mongodb.net/attendenceapp?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology:true});
 mongoose.set("useCreateIndex", true);
   const studentSchema = new mongoose.Schema({
     name: {type:String, required: true},
